@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Stone Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 Stone Paper Scissors</h1>
+            <p>Choose wisely and beat the computer!</p>
+        </div>
+
+        <div class="score-board">
+            <div class="score-item">
+                <h3>Your Score</h3>
+                <div class="score" id="playerScore">0</div>
+            </div>
+            <div class="score-item">
+                <h3>Computer Score</h3>
+                <div class="score" id="computerScore">0</div>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <div class="choices">
+                <button class="choice-btn stone" data-choice="stone">
+                    <span class="icon">🪨</span>
+                    <span class="label">Stone</span>
+                </button>
+                <button class="choice-btn paper" data-choice="paper">
+                    <span class="icon">📄</span>
+                    <span class="label">Paper</span>
+                </button>
+                <button class="choice-btn scissors" data-choice="scissors">
+                    <span class="icon">✂️</span>
+                    <span class="label">Scissors</span>
+                </button>
+            </div>
+
+            <div class="result-container">
+                <div class="result-area">
+                    <div class="player-choice">
+                        <h3>Your Choice</h3>
+                        <div class="choice-display" id="playerChoice">❓</div>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="computer-choice">
+                        <h3>Computer Choice</h3>
+                        <div class="choice-display" id="computerChoice">❓</div>
+                    </div>
+                </div>
+
+                <div class="result-message" id="resultMessage">Make your move!</div>
+            </div>
+
+            <div class="stats">
+                <p id="roundInfo">Round: 0</p>
+                <p id="winRate">Win Rate: 0%</p>
+            </div>
+
+            <button class="reset-btn" onclick="resetGame()">Reset Game</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

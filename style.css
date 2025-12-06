@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(30, 35, 50, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    animation: slideIn 0.5s ease-out;
+    border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 3em;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.header p {
+    color: #a0a8c0;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.score-item {
+    flex: 1;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.score-item:hover {
+    transform: translateY(-5px);
+}
+
+.score-item h3 {
+    font-size: 0.9em;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.score {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.game-area {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.choice-btn {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border: none;
+    padding: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-width: 100px;
+    box-shadow: 0 5px 15px rgba(245, 87, 108, 0.3);
+}
+
+.choice-btn.stone {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.choice-btn.paper {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    box-shadow: 0 5px 15px rgba(245, 87, 108, 0.3);
+}
+
+.choice-btn.scissors {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
+}
+
+.choice-btn:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.choice-btn:active {
+    transform: translateY(-3px);
+}
+
+.choice-btn .icon {
+    font-size: 2.5em;
+}
+
+.choice-btn .label {
+    font-size: 0.9em;
+}
+
+.result-container {
+    background: rgba(60, 70, 100, 0.5);
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.result-area {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.player-choice,
+.computer-choice {
+    flex: 1;
+    text-align: center;
+}
+
+.player-choice h3,
+.computer-choice h3 {
+    color: #4facfe;
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    font-weight: 600;
+}
+
+.choice-display {
+    font-size: 3em;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(40, 50, 80, 0.8);
+    border-radius: 10px;
+    border: 2px solid #4facfe;
+}
+
+.vs {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4facfe;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.result-message {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(40, 50, 80, 0.8);
+    color: #4facfe;
+    border: 2px solid #4facfe;
+}
+
+.result-message.win {
+    background: rgba(34, 139, 34, 0.3);
+    color: #90ee90;
+    border-color: #90ee90;
+}
+
+.result-message.lose {
+    background: rgba(178, 34, 34, 0.3);
+    color: #ff6b6b;
+    border-color: #ff6b6b;
+}
+
+.result-message.draw {
+    background: rgba(184, 134, 11, 0.3);
+    color: #ffd700;
+    border-color: #ffd700;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 15px;
+    background: rgba(60, 70, 100, 0.5);
+    border-radius: 10px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.stats p {
+    color: #4facfe;
+    font-weight: bold;
+    font-size: 0.95em;
+}
+
+.reset-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    padding: 15px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    align-self: center;
+}
+
+.reset-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.reset-btn:active {
+    transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .choices {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .choice-btn {
+        width: 100%;
+    }
+
+    .result-area {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .choice-display {
+        font-size: 2.5em;
+    }
+
+    .score-board {
+        flex-direction: column;
+    }
+}
